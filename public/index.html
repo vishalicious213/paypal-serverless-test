@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Netlify example: Serverless functions</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <main>
+        <h1>Netlify Functions Test</h1>
+
+        <form>
+            <label for="name">Name</label>
+            <input 
+                type="text"
+                id="name"
+                name="name"
+                placeholder="name"
+                required
+            >
+            <button id="nameBtn" type="button">Show name</button>
+        </form>
+
+        <ul>
+            <li><a href="/.netlify/functions/hello?name=you">Hello World</a> ( /.netlify/functions/hello?name=you )</li>
+            <li><a href="/api/hello?name=you">Hello World</a> ( /api/hello?name=you )</li>
+        </ul>
+
+        <section id="sendNameSection" class="sendNameSection">
+            <button id="sendNetlify">Send name using serverless</button>
+            <button id="sendApi">Send name using API route</button>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
