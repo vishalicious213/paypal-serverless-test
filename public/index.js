@@ -1,11 +1,18 @@
+import { loadScript } from "@paypal/paypal-js"
+
 const nameField = document.getElementById("name")
 const nameBtn = document.getElementById("nameBtn")
 const netlifyBtn = document.getElementById("sendNetlify")
 const apiBtn = document.getElementById("sendApi")
+let paypal
+
+// ⬇️ EVENT LISTENERS ⬇️
 
 nameBtn.addEventListener("click", logName)
 netlifyBtn.addEventListener("click", sendNetlify)
 apiBtn.addEventListener("click", sendApi)
+
+// ⬇️ EVENT HANDLERS ⬇️
 
 function logName() {
     console.log(nameField.value)
@@ -30,5 +37,23 @@ async function sendApi() {
         console.log(data.message)
     } catch (error) {
         console.log("Error fetching name response", error)
+    }
+}
+
+// ⬇️ UTILITY FUNCTIONS ⬇️
+
+async function loadPayPal() {
+    try {
+        paypal = await loadScript({ clientId: "test"})
+    } catch (error) {
+        console.error("Failed to load the PayPal JS SDK script", error)
+    }
+
+    if (paypal) {
+        try {
+            await paypal.Buttons().render("#your-container-element")
+        } catch (error) {
+            console.error("Failed to render the PayPal Buttons", error)
+        }
     }
 }
