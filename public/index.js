@@ -1,4 +1,5 @@
-import { loadScript } from "https://cdn.jsdelivr.net/npm/@paypal/paypal-js@8.0.0/dist/esm/paypal-js.js"
+import { loadScript } from "@paypal/paypal-js"
+// import { loadScript } from "https://cdn.jsdelivr.net/npm/@paypal/paypal-js@8.0.0/dist/esm/paypal-js.js"
 
 const nameField = document.getElementById("name")
 const nameBtn = document.getElementById("nameBtn")

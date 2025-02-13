@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@paypal/paypal-js": "^8.2.0"
   }
