@@ -51,9 +51,11 @@ async function loadPayPal() {
 
     if (paypal) {
         try {
-            await paypal.Buttons().render("#your-container-element")
+            await paypal.Buttons().render("#paypal-buttons")
         } catch (error) {
             console.error("Failed to render the PayPal Buttons", error)
         }
     }
 }
+
+loadPayPal()
