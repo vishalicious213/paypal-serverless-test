@@ -4,6 +4,7 @@ const nameField = document.getElementById("name")
 const nameBtn = document.getElementById("nameBtn")
 const netlifyBtn = document.getElementById("sendNetlify")
 const apiBtn = document.getElementById("sendApi")
+const testPayPalBtn = document.getElementById("testPayPalBtn")
 let paypal
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -11,6 +12,7 @@ let paypal
 nameBtn.addEventListener("click", logName)
 netlifyBtn.addEventListener("click", sendNetlify)
 apiBtn.addEventListener("click", sendApi)
+testPayPalBtn.addEventListener("click", testPayPal)
 
 // ⬇️ EVENT HANDLERS ⬇️
 
@@ -38,6 +40,10 @@ async function sendApi() {
     } catch (error) {
         console.log("Error fetching name response", error)
     }
+}
+
+async function testPayPal() {
+    console.log("PayPal button clicked")
 }
 
 // ⬇️ UTILITY FUNCTIONS ⬇️
