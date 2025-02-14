@@ -1,7 +1,12 @@
 exports.handler = async event => {
     try {
         const accessToken = await fetch("/.netlify/functions/getAccessToken")
-        return res.status(200).json({ message: "Order created successfully" })
+        return {
+            statusCode: 200,
+            body: JSON.stringify({
+                message: "Order created successfully"
+            })
+        }
     } catch (error) {
         return {
             statusCode: 500,
