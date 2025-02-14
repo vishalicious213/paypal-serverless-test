@@ -1,6 +1,6 @@
 exports.handler = async event => {
     try {
-        const accessToken = await fetch("/.netlify/functions/getAccessToken")
+        // const accessToken = await fetch("/.netlify/functions/getAccessToken")
         return {
             statusCode: 200,
             body: JSON.stringify({
