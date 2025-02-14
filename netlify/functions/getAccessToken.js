@@ -11,7 +11,8 @@ exports.handler = async event => {
             password: PAYPAL_CLIENT_SECRET,
         })
         console.log(response.body)
-        const data = JSON.parse(response.body)
+        // const data = JSON.parse(response.body)
+        const data = response.body
         const newAccessToken = data.access_token
         return newAccessToken
     } catch (error) {
