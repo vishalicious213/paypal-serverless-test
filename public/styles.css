@@ -40,7 +40,7 @@ button {
     margin-top: 1rem;
 }
 
-.sendNameSection button {
+.sendNameSection button, .testPayPalSection button {
     margin: 1rem;
     width: 8rem;
 }
