@@ -48,7 +48,7 @@ async function testPayPal() {
         const response = await fetch(`/api/getAccessToken`)
         const data = await response.json()
         console.log(data)
-        console.log(data.access_token)
+        console.log(data.body)
         // console.log(data.message)
     } catch (error) {
         // console.log("Error fetching order response", error)
