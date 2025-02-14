@@ -43,7 +43,14 @@ async function sendApi() {
 }
 
 async function testPayPal() {
-    console.log("PayPal button clicked")
+    try {
+        const response = await fetch(`/api/createOrder`)
+        const data = await response.json()
+        console.log(data)
+        console.log(data.message)
+    } catch (error) {
+        console.log("Error fetching order response", error)
+    }
 }
 
 // ⬇️ UTILITY FUNCTIONS ⬇️
