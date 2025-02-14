@@ -44,15 +44,15 @@ async function sendApi() {
 
 async function testPayPal() {
     try {
-        // const response = await fetch(`/api/createOrder`)
-        const response = await fetch(`/api/getAccessToken`)
+        const response = await fetch(`/api/createOrder`)
+        // const response = await fetch(`/api/getAccessToken`)
         const data = await response.json()
         console.log(data)
-        console.log(data.body)
+        // console.log(data.body)
         // console.log(data.message)
     } catch (error) {
-        // console.log("Error fetching order response", error)
-        console.log("Error fetching access token", error)
+        console.log("Error fetching order response", error)
+        // console.log("Error fetching access token", error)
     }
 }
 
