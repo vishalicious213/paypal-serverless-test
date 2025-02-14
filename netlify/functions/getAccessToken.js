@@ -11,20 +11,10 @@ exports.handler = async event => {
             password: PAYPAL_CLIENT_SECRET,
         })
         console.log(response.body)
+        const data = JSON.parse(response.body)
+        const newAccessToken = data.access_token
+        return newAccessToken
     } catch (error) {
         throw new Error(error)
     }
 }
-
-    // const name = event.queryStringParameters.name || 'World'
-    // const { PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET } = process.env
-
-
-// return {
-//     statusCode: 200,
-//     body: `
-//     Hello ${name}!
-//     Your client ID is ${PAYPAL_CLIENT_ID}.
-//     Your secret is ${PAYPAL_CLIENT_SECRET}.
-//     `,
-// }
